@@ -6,7 +6,6 @@ from selenium import webdriver
 def setup(request):
     driver = webdriver.Chrome(executable_path="/Users/macbook/Downloads/chromedriver.exe")
     driver.get("https://practice.automationtesting.in/")
-#    driver.get("https://www.tripadvisor.in/")
     driver.maximize_window()
     request.cls.driver = driver
     yield driver

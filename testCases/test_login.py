@@ -1,5 +1,9 @@
 import time
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support import expected_conditions as EC
 import pytest
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from pageObjects.AccountPage import AccountPage
 from pageObjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
@@ -37,9 +41,9 @@ class TestLogin(BaseClass):
         accountpage = AccountPage(self.driver)
         homepage.my_account_link().click()
         time.sleep(3)
-#        if WebDriverWait(self.driver, 5).until(EC.alert_is_present()):
-#            alert = self.driver.switch_to.alert
-#            alert.dismiss()
+        #Alert(self.driver).dismiss()
+#        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.alert()))
+#        self.driver.switch_to().alert().dismiss()
         accountpage.login_email().send_keys(self.random_email())
         accountpage.login_password().send_keys(self.random_password())
         accountpage.login_button().click()

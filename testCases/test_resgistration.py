@@ -35,7 +35,6 @@ class TestRegistration(BaseClass):
         homepage = HomePage(self.driver)
         accountpage = AccountPage(self.driver)
         homepage.my_account_link().click()
-        #Handle pop up
         time.sleep(3)
         accountpage.reg_email().send_keys(" ")
         accountpage.reg_password().send_keys(self.random_password())
@@ -49,7 +48,6 @@ class TestRegistration(BaseClass):
         homepage = HomePage(self.driver)
         accountpage = AccountPage(self.driver)
         homepage.my_account_link().click()
-        #Handle pop up
         time.sleep(3)
         accountpage.reg_email().send_keys(self.random_email()+"@gmail.com")
         accountpage.reg_password().send_keys("")
